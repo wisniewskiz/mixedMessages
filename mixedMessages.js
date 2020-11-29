@@ -15,16 +15,8 @@ const fortuneTeller = () => {
 
     //randomly generating time periods (today, tomorrow, this week, next week)
     const timePeriod = () => {
-        const generator = randomNumber(4);
-        if (generator == 0) {
-            return 'Today';
-        } else if (generator == 1) {
-            return 'Tomorrow';
-        } else if (generator == 2) {
-            return 'This week';
-        } else {
-            return 'Next week';
-        }
+        const timePeriods = ['Today', 'Tomorrow', 'This week', 'Next week']
+        return timePeriods[randomNumber(timePeriods.length)];
     };
 
     //randomly generating adjectives (good, bad, awesome, poor, neutral)
