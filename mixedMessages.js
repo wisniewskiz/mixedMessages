@@ -12,7 +12,6 @@ const fortuneTeller = () => {
         return Math.floor(Math.random() * numOfParams);
     }
 
-
     //randomly generating time periods (today, tomorrow, this week, next week)
     const timePeriod = () => {
         const timePeriods = ['Today', 'Tomorrow', 'This week', 'Next week']
@@ -25,7 +24,15 @@ const fortuneTeller = () => {
         return adjectives[randomNumber(adjectives.length)];
     };
 
-    return `${timePeriod()} you can expect ${adjective()}.`
+
+    //randomly generating topics (money, love, health, friendships, work)
+    const topic = () => {
+        const topics = ['money', 'love', 'health', 'friendships', 'work'];
+        return topics[randomNumber(topics.length)];
+    }
+
+    //returning final randomly generating fortune
+    return `${timePeriod()} you can expect ${adjective()} news in ${topic()}, and ${adjective()} luck in ${topic()}.`
 }
 
 console.log(fortuneTeller());
