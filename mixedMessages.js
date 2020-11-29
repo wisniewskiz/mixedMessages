@@ -5,10 +5,15 @@
 // The model for the random message generator is as follows:
 //     *Time Period* you can expect *adjective* news in *topic*, and *adjective* luck in *topic*. 
 
+//creating helper function to randomly generate numbers and keep code dry
+const randomNumber = numOfParams => {
+    return Math.floor(Math.random() * numOfParams);
+}
+
 
 //randomly generating time periods (today, tomorrow, this week, next week)
 const timePeriod = () => {
-    const generator = Math.floor(Math.random() * 4);
+    const generator = randomNumber(4);
     if (generator == 0) {
         return 'Today';
     } else if (generator == 1) {
